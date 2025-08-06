@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Álbum - Dessalinizador</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="album.css">
+  <link rel="stylesheet" href="menu-mobile.css" />
+  <script src="menu.js"></script>
+
+</head>
+<body>
+  <!-- Cabeçalho -->
+ <header>
+  <div class="logo">
+    <i class='bx bx-water'></i>
+    <h1>Dessalinizador</h1>
+  </div>
+  
+  <!-- Botão hambúrguer -->
+  <div class="menu-toggle" id="menu-toggle">
+    <i class='bx bx-menu'></i>
+  </div>
+  
+  <nav id="nav-menu">
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="index.html#info">Informações</a></li>
+      <li><a href="index.html#grafico">Desempenho</a></li>
+      <li><a href="documentacao.html">Documentação</a></li>
+      <li><a href="sobre.html">Sobre Nós</a></li>
+      <li><a href="album.html">Álbum</a></li>
+      <li><a href="index.html#contato">Contato</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  <!-- Seção do Álbum -->
+  <section class="album">
+    <h2><i class='bx bx-photo-album'></i> Álbum do Projeto</h2>
+    <p>Veja alguns registros do desenvolvimento do nosso dessalinizador.</p>
+
+    <div class="galeria">
+      <img src="img/foto1.jpg" alt="Desenvolvimento 1">
+      <img src="img/foto2.jpg" alt="Desenvolvimento 2">
+      <img src="img/foto3.jpg" alt="Desenvolvimento 3">
+      <img src="img/foto4.jpg" alt="Desenvolvimento 4">
+      <img src="img/foto5.jpg" alt="Desenvolvimento 5">
+      <img src="img/foto6.jpg" alt="Desenvolvimento 6">
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" alt="Imagem ampliada">
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Dessalinizador por Osmose | Desenvolvido por Talita Cordeiro Teixeira</p>
+  </footer>
+
+  <script>
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.close');
+    const images = document.querySelectorAll('.galeria img');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target !== lightboxImg) {
+        lightbox.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

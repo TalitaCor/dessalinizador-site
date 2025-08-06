@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dessalinizador por Osmose</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="site.css" />
+  <link rel="stylesheet" href="header.css" />
+  <link rel="stylesheet" href="menu-mobile.css" />
+  <script src="menu.js"></script>
+
+</head>
+<body>
+  <!-- Cabeçalho -->
+ <header>
+  <div class="logo">
+    <i class='bx bx-water'></i>
+    <h1>Dessalinizador</h1>
+  </div>
+  
+  <!-- Botão hambúrguer -->
+  <div class="menu-toggle" id="menu-toggle">
+    <i class='bx bx-menu'></i>
+  </div>
+  
+  <nav id="nav-menu">
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="index.html#info">Informações</a></li>
+      <li><a href="index.html#grafico">Desempenho</a></li>
+      <li><a href="documentacao.html">Documentação</a></li>
+      <li><a href="sobre.html">Sobre Nós</a></li>
+      <li><a href="album.html">Álbum</a></li>
+      <li><a href="index.html#contato">Contato</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <h2>Água potável através da tecnologia</h2>
+      <p>Da água salgada à vida: tecnologia que transforma escassez em abundância.</p>
+      <a href="#info" class="btn">Saiba Mais</a>
+    </div>
+    <div class="hero-image">
+      <img src="img/dessalinizador.png" alt="Imagem do dessalinizador" />
+    </div>
+  </section>
+
+  <!-- Informações -->
+  <section id="info" class="info">
+    <h2><i class="bx bx-info-circle"></i> Qual a utilidade de um projeto como esse?</h2>
+    <h3>O dessalinizador por osmose reversa: uma solução prática e sustentável para a escassez de água</h3>
+    <p>
+      A dessalinização por osmose reversa é uma tecnologia eficiente e sustentável para transformar água do mar ou salobra em água potável, atendendo necessidades de consumo humano, irrigação e uso industrial. Com menor custo, maior eficiência energética e baixo impacto ambiental em comparação a métodos tradicionais, ela é fundamental para regiões com escassez de água. Assim, contribui para a segurança hídrica e o desenvolvimento sustentável, beneficiando comunidades vulneráveis e preservando recursos naturais.
+    </p>
+  
+
+    <div class="cards">
+      <div class="card">
+        <i class="bx bx-water"></i>
+        <h3>Entrada</h3>
+        <p>16 L/h de água do mar.</p>
+      </div>
+      <div class="card">
+        <i class="bx bx-droplet"></i>
+        <h3>Saída</h3>
+        <p>16 L/h de água potável.</p>
+      </div>
+      <div class="card">
+        <i class="bx bx-error-circle"></i>
+        <h3>Perda</h3>
+        <p>2 L/h de rejeitos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gráfico -->
+  <section id="grafico" class="grafico">
+    <h2><i class="bx bx-line-chart"></i> Gráfico de Desempenho</h2>
+    <div class="grafico-container">
+      <canvas id="graficoDesempenho"></canvas>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="contato">
+    <h2><i class="bx bx-envelope"></i> Entre em Contato</h2>
+    <form>
+      <input type="text" placeholder="Seu nome" required />
+      <input type="email" placeholder="Seu e-mail" required />
+      <textarea placeholder="Sua mensagem..." required></textarea>
+      <button type="submit" class="btn">Enviar</button>
+    </form>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 Dessalinizador por Osmose | Desenvolvido por Talita Cordeiro Teixeira</p>
+  </footer>
+
+  <!-- Script do gráfico -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById("graficoDesempenho").getContext("2d");
+    new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: ["Entrada", "Saída", "Perda"],
+        datasets: [
+          {
+            label: "Litros por Hora",
+            data: [16, 15, 2],
+            backgroundColor: ["#0077b6", "#00b4d8", "#90e0ef"],
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+        },
+        scales: {
+          y: { beginAtZero: true },
+        },
+      },
+    });
+  </script>
+</body>
+</html>
