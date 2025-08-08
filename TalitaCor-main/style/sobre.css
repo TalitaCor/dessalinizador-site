@@ -1,0 +1,161 @@
+/* ===== Reset básico ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+   background-color: #f9fbfc;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+/* ===== Título principal ===== */
+.sobre h2 {
+  font-size: 2.4rem;
+  color: #0077b6;
+  margin-bottom: 24vh;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* ===== Texto introdutório ===== */
+.sobre p.intro {
+  max-width: 700px;
+  margin: 0 auto 36px auto; /* menos margem inferior para equilibrar */
+  font-size: 1.15rem;
+  color: #555;
+  text-align: center;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* ===== Cards dos integrantes ===== */
+.integrantes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto 48px auto; /* margem inferior reduzida */
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 3px solid #0077b6;
+}
+
+.integrante {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 24px 20px;
+  width: 260px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.integrante:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.integrante h3 {
+  color: #023e8a;
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.integrante p.funcao {
+  font-weight: 600;
+  color: #0077b6;
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+}
+
+.integrante p.bio {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  flex-grow: 1;
+  margin-bottom: 0; /* remove margem desnecessária */
+}
+
+/* ===== Sobre o projeto ===== */
+.projeto {
+  max-width: 900px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px 32px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin: 0 auto 36px auto;
+  font-size: 1.15rem;
+  color: #444;
+  line-height: 1.7;
+  text-align: justify;
+  font-weight: 400;
+}
+
+/* ===== Rodapé ===== */
+footer {
+  background-color: #0077b6;
+  color: white;
+  text-align: center;
+  padding: 15px 10%;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 900px) {
+  .integrantes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .integrante {
+    width: 90%;
+  }
+
+  body {
+    padding: 100px 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .sobre h2 {
+    font-size: 2rem;
+  }
+
+  .integrante h3 {
+    font-size: 1.2rem;
+  }
+
+  .integrante p.funcao {
+    font-size: 1rem;
+  }
+
+  .integrante p.bio {
+    font-size: 0.9rem;
+  }
+
+  .projeto {
+    padding: 20px 16px;
+    font-size: 1rem;
+  }
+}
